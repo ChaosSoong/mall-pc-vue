@@ -3,19 +3,21 @@
 import Vue from "vue";
 import App from "./App";
 import router from "./router";
-import iView from "iview";
-import "iview/dist/styles/iview.css";
+import ViewUI from "view-design";
 
-Vue.use(iView);
+// import style
+import "view-design/dist/styles/iview.css";
+
+Vue.use(ViewUI);
 Vue.config.productionTip = false;
 
 router.beforeEach((to, from, next) => {
-  iView.LoadingBar.start();
+  ViewUI.LoadingBar.start();
   next();
 });
 
 router.afterEach(() => {
-  iView.LoadingBar.finish();
+  ViewUI.LoadingBar.finish();
 });
 
 new Vue({

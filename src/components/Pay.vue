@@ -8,10 +8,10 @@
       </Alert>
       <div class="pay-box">
         <div class="pay-demo">
-          <img src="static/img/pay/pay-demo.png">
+          <img src="static/img/pay/pay-demo.png" />
         </div>
         <div class="pay-qr-scan">
-          <img src="static/img/pay/pay-qrscan.png">
+          <img src="static/img/pay/pay-qrscan.png" />
           <div class="pay-tips">
             <router-link to="/payDone"><p>点击我, 完成支付</p></router-link>
           </div>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'Pay'
+  name: "Pay"
 };
 </script>
 
@@ -46,7 +46,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.pay-demo img{
+.pay-demo img {
   height: 80%;
 }
 .pay-qr-scan {

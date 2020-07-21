@@ -9,7 +9,7 @@
         <!-- 头部 -->
         <div class="seckill-head">
           <div class="seckill-icon">
-            <img src="static/img/index/clock.png">
+            <img src="static/img/index/clock.png" />
           </div>
           <div class="seckill-text">
             <span class="seckill-title">限时秒杀</span>
@@ -17,25 +17,39 @@
           </div>
           <div class="count-down">
             <span class="count-down-text">当前场次</span>
-            <span class="count-down-num count-down-hour">{{ seckillsHours }}</span>
+            <span class="count-down-num count-down-hour">{{
+              seckillsHours
+            }}</span>
             <span class="count-down-point">:</span>
-            <span class="count-down-num count-down-minute">{{ seckillsMinutes }}</span>
+            <span class="count-down-num count-down-minute">{{
+              seckillsMinutes
+            }}</span>
             <span class="count-down-point">:</span>
-            <span class="count-down-num count-down-seconds">{{ seckillsSeconds }}</span>
+            <span class="count-down-num count-down-seconds">{{
+              seckillsSeconds
+            }}</span>
             <span class="count-down-text">后结束抢购</span>
           </div>
         </div>
         <!-- 内容 -->
         <div class="seckill-content">
-          <div class="seckill-item" v-for="(item, index) in seckills.goodsList" :key="index">
+          <div
+            class="seckill-item"
+            v-for="(item, index) in seckills.goodsList"
+            :key="index"
+          >
             <div class="seckill-item-img">
-              <router-link to="/goodsList"><img :src="item.img"></router-link>
+              <router-link to="/goodsList"><img :src="item.img"/></router-link>
             </div>
             <div class="seckill-item-info">
-              <p>{{item.intro}}</p>
+              <p>{{ item.intro }}</p>
               <p>
-                <span class="seckill-price text-danger"><Icon type="social-yen"></Icon>{{item.price}}</span>
-                <span class="seckill-old-price"><s>{{item.realPrice}}</s></span>
+                <span class="seckill-price text-danger"
+                  ><Icon type="social-yen"></Icon>{{ item.price }}</span
+                >
+                <span class="seckill-old-price"
+                  ><s>{{ item.realPrice }}</s></span
+                >
               </p>
             </div>
           </div>
@@ -44,38 +58,50 @@
       <!-- 电脑专场 -->
       <div class="item-class">
         <div class="item-class-head">
-          <span class="item-class-title">{{computer.title}}</span>
+          <span class="item-class-title">{{ computer.title }}</span>
           <ul>
             <li v-for="(item, index) in computer.link" :key="index">
-              <router-link to="/goodsList">{{item}}</router-link>
+              <router-link to="/goodsList">{{ item }}</router-link>
             </li>
           </ul>
         </div>
-        <div class="item-class-content" v-for="(item, index) in computer.detail" :key="index">
+        <div
+          class="item-class-content"
+          v-for="(item, index) in computer.detail"
+          :key="index"
+        >
           <div class="item-content-top">
             <div class="item-big-img">
               <router-link to="/goodsList">
-                <img :src="item.bigImg" alt="">
+                <img :src="item.bigImg" alt="" />
               </router-link>
             </div>
             <div class="item-four-img">
-              <div class="item-four-detail" v-for="(subItem, index) in item.itemFour" :key="index">
+              <div
+                class="item-four-detail"
+                v-for="(subItem, index) in item.itemFour"
+                :key="index"
+              >
                 <div class="item-four-detail-text">
-                  <p class="pt_bi_tit">{{subItem.title}}</p>
-                  <p class="pt_bi_promo">{{subItem.intro}}</p>
+                  <p class="pt_bi_tit">{{ subItem.title }}</p>
+                  <p class="pt_bi_promo">{{ subItem.intro }}</p>
                 </div>
                 <div class="item-four-detail-img">
                   <router-link to="/goodsList">
-                    <img :src="subItem.img" alt="">
+                    <img :src="subItem.img" alt="" />
                   </router-link>
                 </div>
               </div>
             </div>
           </div>
           <div class="item-content-bottom">
-            <div class="item-content-bottom-img" v-for="(subImg, index) in item.itemContent" :key="index">
+            <div
+              class="item-content-bottom-img"
+              v-for="(subImg, index) in item.itemContent"
+              :key="index"
+            >
               <router-link to="/goodsList">
-                <img :src="subImg">
+                <img :src="subImg" />
               </router-link>
             </div>
           </div>
@@ -84,36 +110,48 @@
       <!-- 爱吃专场 -->
       <div class="item-class">
         <div class="item-class-head item-class-eat-head">
-          <span class="item-class-title">{{eat.title}}</span>
+          <span class="item-class-title">{{ eat.title }}</span>
           <ul>
             <li v-for="(item, index) in eat.link" :key="index">
-              <router-link to="/goodsList">{{item}}</router-link>
+              <router-link to="/goodsList">{{ item }}</router-link>
             </li>
           </ul>
         </div>
-        <div class="item-class-content" v-for="(item, index) in eat.detail" :key="index">
+        <div
+          class="item-class-content"
+          v-for="(item, index) in eat.detail"
+          :key="index"
+        >
           <div class="item-content-top">
             <div class="item-big-img">
-              <img :src="item.bigImg" alt="">
+              <img :src="item.bigImg" alt="" />
             </div>
             <div class="item-four-img">
-              <div class="item-four-detail" v-for="(subItem, index) in item.itemFour" :key="index">
+              <div
+                class="item-four-detail"
+                v-for="(subItem, index) in item.itemFour"
+                :key="index"
+              >
                 <div class="item-four-detail-text">
-                  <p class="pt_bi_tit pt_bi_tit-eat">{{subItem.title}}</p>
-                  <p class="pt_bi_promo">{{subItem.intro}}</p>
+                  <p class="pt_bi_tit pt_bi_tit-eat">{{ subItem.title }}</p>
+                  <p class="pt_bi_promo">{{ subItem.intro }}</p>
                 </div>
                 <div class="item-four-detail-img">
                   <router-link to="/goodsList">
-                    <img :src="subItem.img" alt="">
+                    <img :src="subItem.img" alt="" />
                   </router-link>
                 </div>
               </div>
             </div>
           </div>
           <div class="item-content-bottom">
-            <div class="item-content-bottom-img" v-for="(subImg, index) in item.itemContent" :key="index">
+            <div
+              class="item-content-bottom-img"
+              v-for="(subImg, index) in item.itemContent"
+              :key="index"
+            >
               <router-link to="/goodsList">
-                <img :src="subImg">
+                <img :src="subImg" />
               </router-link>
             </div>
           </div>
@@ -124,43 +162,49 @@
 </template>
 
 <script>
-import Search from '@/components/Search';
-import HomeNav from '@/components/nav/HomeNav';
-import store from '@/vuex/store';
-import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
+import Search from "@/components/Search";
+import HomeNav from "@/components/nav/HomeNav";
+import store from "@/vuex/store";
+import { mapState, mapActions, mapGetters, mapMutations } from "vuex";
 export default {
-  name: 'Index',
-  created () {
+  name: "Index",
+  created() {
     this.loadSeckillsInfo();
     this.loadCarouselItems();
     this.loadComputer();
     this.loadEat();
     this.loadShoppingCart();
   },
-  mounted () {
+  mounted() {
     const father = this;
-    this.setIntervalObj = setInterval(function () {
+    this.setIntervalObj = setInterval(function() {
       father.REDUCE_SECKILLS_TIME();
     }, 1000);
   },
-  data () {
+  data() {
     return {
       setIntervalObj: null
     };
   },
   methods: {
-    ...mapActions(['loadSeckillsInfo', 'loadCarouselItems', 'loadComputer', 'loadEat', 'loadShoppingCart']),
-    ...mapMutations(['REDUCE_SECKILLS_TIME'])
+    ...mapActions([
+      "loadSeckillsInfo",
+      "loadCarouselItems",
+      "loadComputer",
+      "loadEat",
+      "loadShoppingCart"
+    ]),
+    ...mapMutations(["REDUCE_SECKILLS_TIME"])
   },
   computed: {
-    ...mapState([ 'seckills', 'computer', 'eat' ]),
-    ...mapGetters([ 'seckillsHours', 'seckillsMinutes', 'seckillsSeconds' ])
+    ...mapState(["seckills", "computer", "eat"]),
+    ...mapGetters(["seckillsHours", "seckillsMinutes", "seckillsSeconds"])
   },
   components: {
     Search,
     HomeNav
   },
-  destroyed () {
+  destroyed() {
     clearInterval(this.setIntervalObj);
   },
   store
@@ -169,7 +213,7 @@ export default {
 
 <style scoped>
 .container {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 .content {
   width: 1008px;

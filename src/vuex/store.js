@@ -1,18 +1,19 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import * as actions from './actions';
-import * as mutations from './mutations';
-import * as getters from './getters';
+import Vue from "vue";
+import Vuex from "vuex";
+import * as actions from "./actions";
+import * as mutations from "./mutations";
+import * as getters from "./getters";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     isLoading: false, // 是否展示loading动画
-    orderBy: 'sale', // 根据什么字段排序
-    goodsInfo: { // 商品详情
+    orderBy: "sale", // 根据什么字段排序
+    goodsInfo: {
+      // 商品详情
       goodsImg: [],
-      title: '',
+      title: "",
       tags: [],
       discount: [],
       promotion: [],
@@ -23,15 +24,18 @@ export default new Vuex.Store({
       param: [],
       remarks: []
     },
-    userInfo: { // 用户信息
-      username: ''
+    userInfo: {
+      // 用户信息
+      username: ""
     },
     signUpStep: 0, // 登陆步骤
-    marketing: { // 营销
+    marketing: {
+      // 营销
       CarouselItems: [], // 轮播图
       activity: [] // 活动
     },
-    seckills: { // 秒杀
+    seckills: {
+      // 秒杀
       deadline: {
         hours: 0,
         minute: 0,

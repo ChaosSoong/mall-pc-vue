@@ -7,14 +7,22 @@
           <i class="fa fa-fire"></i>
         </div>
         <div class="shop-title-content">
-          <p><router-link to="/merchant">{{ shopIntro.shopName }}</router-link></p>
-          <p><router-link to="/merchant">{{ shopIntro.slogen }}</router-link></p>
+          <p>
+            <router-link to="/merchant">{{ shopIntro.shopName }}</router-link>
+          </p>
+          <p>
+            <router-link to="/merchant">{{ shopIntro.slogen }}</router-link>
+          </p>
         </div>
       </div>
       <div class="shop-another-item">
-        <div class="shop-another-item-detail" v-for="(item, index) in shopIntro.showGoods" :key="index">
+        <div
+          class="shop-another-item-detail"
+          v-for="(item, index) in shopIntro.showGoods"
+          :key="index"
+        >
           <div class="shop-another-item-img">
-            <img :src="item.img" alt="">
+            <img :src="item.img" alt="" />
           </div>
           <div class="shop-anoter-item-intro">
             <p>{{ item.intro[0] }}</p>
@@ -28,24 +36,24 @@
 
 <script>
 export default {
-  name: 'ShopHeader',
-  data () {
+  name: "ShopHeader",
+  data() {
     return {
       shopIntro: {
-        shopName: 'Gavin Shop',
-        slogen: 'The Best Thing For You',
+        shopName: "Gavin Shop",
+        slogen: "The Best Thing For You",
         showGoods: [
           {
-            img: 'static/img/goodsList/item-show-1.jpg',
-            intro: [ '全身磨砂', '防指纹' ]
+            img: "static/img/goodsList/item-show-1.jpg",
+            intro: ["全身磨砂", "防指纹"]
           },
           {
-            img: 'static/img/goodsList/item-show-2.jpg',
-            intro: [ '环保PP材质', '不发黄' ]
+            img: "static/img/goodsList/item-show-2.jpg",
+            intro: ["环保PP材质", "不发黄"]
           },
           {
-            img: 'static/img/goodsList/item-show-3.jpg',
-            intro: [ '0.4mm纤细', '纤薄手感' ]
+            img: "static/img/goodsList/item-show-3.jpg",
+            intro: ["0.4mm纤细", "纤薄手感"]
           }
         ]
       }

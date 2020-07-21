@@ -3,21 +3,26 @@
     <ShopHeader></ShopHeader>
     <div class="goods-container">
       <div class="goods-list">
-        <div class="goods-show-info" v-for="(item, index) in orderGoodsList" :key="index">
+        <div
+          class="goods-show-info"
+          v-for="(item, index) in orderGoodsList"
+          :key="index"
+        >
           <div class="goods-show-img">
             <router-link to="/goodsDetail"><img :src="item.img"/></router-link>
           </div>
           <div class="goods-show-price">
             <span>
               <Icon type="social-yen text-danger"></Icon>
-              <span class="seckill-price text-danger">{{item.price}}</span>
+              <span class="seckill-price text-danger">{{ item.price }}</span>
             </span>
           </div>
           <div class="goods-show-detail">
-            <span>{{item.intro}}</span>
+            <span>{{ item.intro }}</span>
           </div>
           <div class="goods-show-num">
-            已有<span>{{item.remarks}}</span>人评价
+            已有<span>{{ item.remarks }}</span
+            >人评价
           </div>
         </div>
       </div>
@@ -29,19 +34,19 @@
 </template>
 
 <script>
-import ShopHeader from '@/components/header/ShopHeader';
-import store from '@/vuex/store';
-import { mapGetters, mapActions } from 'vuex';
+import ShopHeader from "@/components/header/ShopHeader";
+import store from "@/vuex/store";
+import { mapGetters, mapActions } from "vuex";
 export default {
-  name: 'Merchant',
-  created () {
+  name: "Merchant",
+  created() {
     this.loadGoodsList();
   },
   computed: {
-    ...mapGetters(['orderGoodsList'])
+    ...mapGetters(["orderGoodsList"])
   },
   methods: {
-    ...mapActions(['loadGoodsList'])
+    ...mapActions(["loadGoodsList"])
   },
   components: {
     ShopHeader
@@ -52,9 +57,9 @@ export default {
 
 <style scoped>
 .text-danger {
-  color: #A94442;
+  color: #a94442;
 }
-.seckill-price{
+.seckill-price {
   margin-right: 5px;
   font-size: 25px;
   font-weight: bold;
@@ -68,36 +73,36 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.goods-show-info{
+.goods-show-info {
   width: 240px;
   padding: 10px;
   margin: 15px 0px;
   border: 1px solid #fff;
   cursor: pointer;
 }
-.goods-show-info:hover{
+.goods-show-info:hover {
   border: 1px solid #ccc;
   box-shadow: 0px 0px 15px #ccc;
 }
-.goods-show-price{
+.goods-show-price {
   margin-top: 6px;
 }
-.goods-show-detail{
+.goods-show-detail {
   font-size: 12px;
   margin: 6px 0px;
 }
-.goods-show-num{
+.goods-show-num {
   font-size: 12px;
   margin-bottom: 6px;
   color: #009688;
 }
-.goods-show-num span{
-  color: #005AA0;
+.goods-show-num span {
+  color: #005aa0;
   font-weight: bold;
 }
-.goods-show-seller{
+.goods-show-seller {
   font-size: 12px;
-  color:#E4393C;
+  color: #e4393c;
 }
 .goods-page {
   margin-top: 20px;

@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="pay-done-box">
-      <img src="static/img/pay-success.png">
+      <img src="static/img/pay-success.png" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PayDone'
+  name: "PayDone"
 };
 </script>
 

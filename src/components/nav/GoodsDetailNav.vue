@@ -3,7 +3,7 @@
     <div class="shop-nav-container">
       <ul>
         <li v-for="(item, index) in shopNav" :key="index">
-          <router-link to="/merchant">{{item}}</router-link>
+          <router-link to="/merchant">{{ item }}</router-link>
         </li>
       </ul>
     </div>
@@ -12,10 +12,10 @@
 
 <script>
 export default {
-  name: 'GoodsDetailNav',
-  data () {
+  name: "GoodsDetailNav",
+  data() {
     return {
-      shopNav: [ '首页', 'iPhoneX', 'iPhone8', 'OnePlus', '坚果Pro', 'Note8' ]
+      shopNav: ["首页", "iPhoneX", "iPhone8", "OnePlus", "坚果Pro", "Note8"]
     };
   }
 };

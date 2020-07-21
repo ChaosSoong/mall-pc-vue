@@ -2,7 +2,7 @@
   <div>
     <div class="freeback-container">
       <div class="freeback-img-box">
-        <img src="static/img/freeback.png">
+        <img src="static/img/freeback.png" />
       </div>
       <div class="freeback-box-border">
         <div class="freeback-box">
@@ -14,10 +14,18 @@
             <div class="freeback-form">
               <Form :model="formItem" :label-width="80">
                 <FormItem label="标题">
-                  <i-input v-model="formItem.title" placeholder="请输入标题"></i-input>
+                  <i-input
+                    v-model="formItem.title"
+                    placeholder="请输入标题"
+                  ></i-input>
                 </FormItem>
                 <FormItem label="反馈信息">
-                  <i-input v-model="formItem.content" type="textarea" :autosize="{minRows: 8,maxRows: 10}" placeholder="请输入反馈信息"></i-input>
+                  <i-input
+                    v-model="formItem.content"
+                    type="textarea"
+                    :autosize="{ minRows: 8, maxRows: 10 }"
+                    placeholder="请输入反馈信息"
+                  ></i-input>
                 </FormItem>
                 <FormItem>
                   <Button type="primary">提交</Button>
@@ -34,12 +42,12 @@
 
 <script>
 export default {
-  name: 'Freeback',
-  data () {
+  name: "Freeback",
+  data() {
     return {
       formItem: {
-        title: '',
-        content: ''
+        title: "",
+        content: ""
       }
     };
   }

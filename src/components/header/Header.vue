@@ -3,14 +3,20 @@
     <div class="nav">
       <ul class="location">
         <li>
-          <Dropdown  placement="bottom-start">
+          <Dropdown placement="bottom-start">
             <a href="javascript:void(0)">
-              <Icon type="ios-location" class="icon"></Icon> {{city}}
+              <Icon type="ios-location" class="icon"></Icon> {{ city }}
             </a>
             <DropdownMenu slot="list">
               <div class="city">
                 <p v-for="(items, index) in cityArr" :key="index">
-                  <span v-for="(item, index) in items"  class="city-item" :key="index" @click="changeCity(item)">{{item}}</span>
+                  <span
+                    v-for="(item, index) in items"
+                    class="city-item"
+                    :key="index"
+                    @click="changeCity(item)"
+                    >{{ item }}</span
+                  >
                 </p>
               </div>
             </DropdownMenu>
@@ -19,29 +25,36 @@
       </ul>
       <ul class="detail">
         <li class="first" v-show="!userInfo.username">
-          你好，请<router-link to="/login">登录 <Icon type="person"></Icon></router-link> |<span class="text-color-red"><router-link to="/SignUp">免费注册 <Icon type="person-add"></Icon></router-link></span>
+          你好，请<router-link to="/login"
+            >登录 <Icon type="person"></Icon
+          ></router-link>
+          |<span class="text-color-red"
+            ><router-link to="/SignUp"
+              >免费注册 <Icon type="person-add"></Icon></router-link
+          ></span>
         </li>
         <li v-show="!!userInfo.username">
           <Dropdown>
             <p class="username-p">
-              <Avatar class="person-icon" icon="person" size="small" /> <span class="username">{{userInfo.username}} </span>
+              <Avatar class="person-icon" icon="person" size="small" />
+              <span class="username">{{ userInfo.username }} </span>
             </p>
             <DropdownMenu slot="list">
-                <div class="my-page">
-                  <div class="my-info" @click="myInfo">
-                    <Icon type="home"></Icon>
-                    <p>我的主页</p>
-                  </div>
-                  <div class="sign-out" @click="signOutFun">
-                    <Icon type="log-out"></Icon>
-                    <p>退出登录</p>
-                  </div>
+              <div class="my-page">
+                <div class="my-info" @click="myInfo">
+                  <Icon type="home"></Icon>
+                  <p>我的主页</p>
                 </div>
+                <div class="sign-out" @click="signOutFun">
+                  <Icon type="log-out"></Icon>
+                  <p>退出登录</p>
+                </div>
+              </div>
             </DropdownMenu>
           </Dropdown>
         </li>
         <li>
-          <Dropdown  placement="bottom-start">
+          <Dropdown placement="bottom-start">
             <a href="javascript:void(0)">
               <Icon type="ios-cart-outline"></Icon> 购物车
             </a>
@@ -52,27 +65,31 @@
                 <span>赶快去添加商品吧~</span>
               </div>
               <div class="shopping-cart-list" v-show="shoppingCart.length > 0">
-                <div class="shopping-cart-box" v-for="(item,index) in shoppingCart" :key="index">
+                <div
+                  class="shopping-cart-box"
+                  v-for="(item, index) in shoppingCart"
+                  :key="index"
+                >
                   <div class="shopping-cart-img">
-                    <img :src="item.img">
+                    <img :src="item.img" />
                   </div>
                   <div class="shopping-cart-info">
                     <div class="shopping-cart-title">
-                      <p>{{item.title.substring(0, 22)}}...</p>
+                      <p>{{ item.title.substring(0, 22) }}...</p>
                     </div>
                     <div class="shopping-cart-detail">
                       <p>
                         套餐:
                         <span class="shopping-cart-text">
-                          {{item.package}}
+                          {{ item.package }}
                         </span>
                         数量:
                         <span class="shopping-cart-text">
-                          {{item.count}}
+                          {{ item.count }}
                         </span>
                         价钱:
                         <span class="shopping-cart-text">
-                          {{item.price}}
+                          {{ item.price }}
                         </span>
                       </p>
                     </div>
@@ -96,41 +113,41 @@
 </template>
 
 <script>
-import store from '@/vuex/store';
-import { mapState, mapActions } from 'vuex';
+import store from "@/vuex/store";
+import { mapState, mapActions } from "vuex";
 export default {
-  name: 'M-Header',
-  created () {
+  name: "M-Header",
+  created() {
     this.isLogin();
   },
-  data () {
+  data() {
     return {
-      city: '珠海',
+      city: "珠海",
       cityArr: [
-        ['北京', '上海', '天津', '重庆', '广州'],
-        ['深圳', '河南', '辽宁', '吉林', '江苏'],
-        ['江西', '四川', '海南', '贵州', '云南'],
-        ['西藏', '陕西', '甘肃', '青海', '珠海']
+        ["北京", "上海", "天津", "重庆", "广州"],
+        ["深圳", "河南", "辽宁", "吉林", "江苏"],
+        ["江西", "四川", "海南", "贵州", "云南"],
+        ["西藏", "陕西", "甘肃", "青海", "珠海"]
       ]
     };
   },
   computed: {
-    ...mapState(['userInfo', 'shoppingCart'])
+    ...mapState(["userInfo", "shoppingCart"])
   },
   methods: {
-    ...mapActions(['signOut', 'isLogin']),
-    changeCity (city) {
+    ...mapActions(["signOut", "isLogin"]),
+    changeCity(city) {
       this.city = city;
     },
-    goToPay () {
-      this.$router.push('/order');
+    goToPay() {
+      this.$router.push("/order");
     },
-    myInfo () {
-      this.$router.push('/home');
+    myInfo() {
+      this.$router.push("/home");
     },
-    signOutFun () {
+    signOutFun() {
       this.signOut();
-      this.$router.push('/');
+      this.$router.push("/");
     }
   },
   store
@@ -199,7 +216,7 @@ export default {
 }
 .person-icon {
   color: #d9534f;
-  background-color:  #f0cdb2;
+  background-color: #f0cdb2;
 }
 .username {
   color: #999999;

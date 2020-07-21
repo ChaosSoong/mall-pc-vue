@@ -2,19 +2,19 @@
   <div>
     <Row class="container">
       <i-col span="12" offset="2" class="signup-img-box">
-        <img src="static/img/signup-sale.png" alt="">
+        <img src="static/img/signup-sale.png" alt="" />
       </i-col>
       <i-col span="8" class="box">
         <div class="sign-up-title">
           <h1>欢迎注册账号</h1>
-          <br>
+          <br />
           <h2>BIT MALL, 天天低价品质保证, 让消费者钱更值钱</h2>
         </div>
         <div class="sing-up-step-box">
           <Steps :current="signUpStep">
-              <Step title="验证手机号" icon="iphone"></Step>
-              <Step title="填写账号信息" icon="person-add"></Step>
-              <Step title="注册成功" icon="ios-checkmark-outline"></Step>
+            <Step title="验证手机号" icon="iphone"></Step>
+            <Step title="填写账号信息" icon="person-add"></Step>
+            <Step title="注册成功" icon="ios-checkmark-outline"></Step>
           </Steps>
           <div class="sign-up-box">
             <transition mode="out-in">
@@ -29,24 +29,24 @@
 </template>
 
 <script>
-import store from '@/vuex/store';
-import { mapState, mapMutations } from 'vuex';
+import store from "@/vuex/store";
+import { mapState, mapMutations } from "vuex";
 
 export default {
-  name: 'SignUp',
-  data () {
+  name: "SignUp",
+  data() {
     return {
       index: 0
     };
   },
   computed: {
-    ...mapState(['signUpStep'])
+    ...mapState(["signUpStep"])
   },
   methods: {
-    ...mapMutations(['SET_SIGN_UP_SETP'])
+    ...mapMutations(["SET_SIGN_UP_SETP"])
   },
   store,
-  mounted () {
+  mounted() {
     this.SET_SIGN_UP_SETP(0);
   }
 };
@@ -64,7 +64,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.signup-img-box>img {
+.signup-img-box > img {
   height: 80%;
 }
 .sign-up-title {
