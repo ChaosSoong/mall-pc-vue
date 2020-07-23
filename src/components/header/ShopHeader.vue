@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       shopIntro: {
-        shopName: "Gavin Shop",
+        shopName: "Shop",
         slogen: "The Best Thing For You",
         showGoods: [
           {

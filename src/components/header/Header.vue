@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="nav">
-      <ul class="location">
+      <ul class="location" style="visibility:hidden">
         <li>
           <Dropdown placement="bottom-start">
             <a href="javascript:void(0)">
@@ -104,9 +104,9 @@
             </DropdownMenu>
           </Dropdown>
         </li>
-        <li><router-link to="/">网站导航</router-link></li>
-        <li><router-link to="/freeback">意见反馈</router-link></li>
-        <li><router-link to="/">商城首页</router-link></li>
+        <li><router-link to="/home">我的订单</router-link></li>
+        <!-- <li><router-link to="/freeback">意见反馈</router-link></li>
+        <li><router-link to="/">商城首页</router-link></li> -->
       </ul>
     </div>
   </div>

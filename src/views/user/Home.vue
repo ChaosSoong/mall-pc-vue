@@ -21,7 +21,6 @@
             <div class="user-img">
               <img src="static/img/head.png" />
             </div>
-            <p>Gavin</p>
           </div>
           <Submenu name="1">
             <template slot="title">
@@ -56,7 +55,6 @@
             <router-view></router-view>
           </transition>
         </Content>
-        <Footer class="layout-footer-center">2018 &copy; Gavin</Footer>
       </Layout>
     </Layout>
   </div>
