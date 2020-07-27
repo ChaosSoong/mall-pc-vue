@@ -22,27 +22,29 @@
               <img src="static/img/head.png" />
             </div>
           </div>
+          <Submenu name="0">
+            <template slot="title">
+              <Icon type="location"></Icon>
+              <span>订单中心</span>
+            </template>
+            <MenuItem name="myOrder">我的订单</MenuItem>
+            <MenuItem name="addAddress">售后服务</MenuItem>
+          </Submenu>
           <Submenu name="1">
             <template slot="title">
               <Icon type="location"></Icon>
-              <span>收货地址</span>
+              <span>账户管理</span>
             </template>
-            <MenuItem name="myAddress">我的收货地址</MenuItem>
-            <MenuItem name="addAddress">添加收货地址</MenuItem>
+            <MenuItem name="myOrder">账户信息</MenuItem>
+            <MenuItem name="myAddress">地址信息</MenuItem>
+            <MenuItem name="addAddress">发票管理</MenuItem>
           </Submenu>
           <Submenu name="2">
             <template slot="title">
-              <Icon type="clipboard"></Icon>
-              <span>购物订单</span>
+              <Icon type="location"></Icon>
+              <span>客户服务</span>
             </template>
-            <MenuItem name="myOrder">我的订单</MenuItem>
-          </Submenu>
-          <Submenu name="3">
-            <template slot="title">
-              <Icon type="ios-cart"></Icon>
-              <span>购物车</span>
-            </template>
-            <MenuItem name="myShoppingCart">我的购物车</MenuItem>
+            <MenuItem name="myAddress">我的投诉</MenuItem>
           </Submenu>
         </Menu>
       </Sider>

@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Index from "@/views/main/Index";
 const Login = resolve => require(["@/views/main/Login"], resolve);
 const SignUp = resolve => require(["@/views/main/SignUp"], resolve);
+const Categroy = resolve => require(["@/views/main/Categroy"], resolve);
 const GoodsList = resolve => require(["@/views/main/GoodsList"], resolve);
 const GoodsDetail = resolve => require(["@/views/main/GoodsDetail"], resolve);
 const CheckPhone = resolve =>
@@ -11,18 +12,20 @@ const InputInfo = resolve =>
   require(["@/components/signUp/InputInfo"], resolve);
 const SignUpDone = resolve =>
   require(["@/components/signUp/SignUpDone"], resolve);
-const ShoppingCart = resolve => require(["@/views/main/ShoppingCart"], resolve);
-const Order = resolve => require(["@/views/main/Order"], resolve);
-const Pay = resolve => require(["@/views/main/Pay"], resolve);
-const PayDone = resolve => require(["@/views/main/PayDone"], resolve);
+const ShoppingCart = resolve =>
+  require(["@/views/order/ShoppingCart"], resolve);
+const addCart = resolve => require(["@/views/order/addCart"], resolve);
+const Order = resolve => require(["@/views/order/Order"], resolve);
+const Pay = resolve => require(["@/views/order/Pay"], resolve);
+const PayDone = resolve => require(["@/views/order/PayDone"], resolve);
 const Freeback = resolve => require(["@/components/Freeback"], resolve);
 const Home = resolve => require(["@/views/user/Home"], resolve);
-const MyAddress = resolve => require(["@/components/home/MyAddress"], resolve);
+const MyAddress = resolve => require(["@/views/user/home/MyAddress"], resolve);
 const AddAddress = resolve =>
-  require(["@/components/home/AddAddress"], resolve);
-const MyOrder = resolve => require(["@/components/home/MyOrder"], resolve);
+  require(["@/views/user/home/AddAddress"], resolve);
+const MyOrder = resolve => require(["@/views/user/home/MyOrder"], resolve);
 const MyShoppingCart = resolve =>
-  require(["@/components/home/MyShoppingCart"], resolve);
+  require(["@/views/user/home/MyShoppingCart"], resolve);
 const Merchant = resolve => require(["@/views/main/Merchant"], resolve);
 
 Vue.use(Router);
@@ -67,6 +70,11 @@ export default new Router({
       ]
     },
     {
+      path: "/Categroy", // 类目
+      name: "Categroy",
+      component: Categroy
+    },
+    {
       path: "/goodsList", // 商品列表
       name: "GoodsList",
       component: GoodsList
@@ -77,9 +85,14 @@ export default new Router({
       component: GoodsDetail
     },
     {
-      path: "/shoppingCart", // 商品详情
+      path: "/shoppingCart", // 购物车
       name: "ShoppingCart",
       component: ShoppingCart
+    },
+    {
+      path: "/addCart", // 加入购物车成功
+      name: "addCart",
+      component: addCart
     },
     {
       path: "/order", // 订单页面
